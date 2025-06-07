@@ -14,6 +14,7 @@ export const fetchBrandStoryData = async (authUserId) => {
   }
 
   const updatedData = {
+    brand_name: BrandStoryData.brand_name || '',
     character: BrandStoryData.character || '',
     external_problem: BrandStoryData.external_problem || '',
     internal_problem: BrandStoryData.internal_problem || '',

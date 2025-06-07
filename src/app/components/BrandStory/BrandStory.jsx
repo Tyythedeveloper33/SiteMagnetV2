@@ -9,6 +9,7 @@ const BrandStory = ({ userId }) => {
   const [progress, setProgress] = useState(0);
 
   const questions = [
+    "What is your business name?",
     "Who is your customer and what do they want?",
     "What problem are they facing externally?",
     "How does that problem make them feel internally?",
@@ -22,6 +23,7 @@ const BrandStory = ({ userId }) => {
   ];
 
   const questionToFieldMapping = {
+    "What is your business name?": "brand_name",
     "Who is your customer and what do they want?": "character",
     "What problem are they facing externally?": "external_problem",
     "How does that problem make them feel internally?": "internal_problem",

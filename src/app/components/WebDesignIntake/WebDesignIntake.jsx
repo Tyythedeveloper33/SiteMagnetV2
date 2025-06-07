@@ -5,7 +5,7 @@ import { fetchBrandStoryData , fetchWebsiteIntakeData, fetchDeploySite} from "@/
 
 
 const templates = [
-  { id: "classic", name: "Classic", preview: "/templates/classic.png" },
+  { id: "classic", name: "Classic", preview: "/classic.png" },
   { id: "modern", name: "Modern", preview: "/classic.png" },
   { id: "custom", name: "Custom", preview: "/custom.png" },
 ];
@@ -18,7 +18,7 @@ const WebDesignIntake = ({ userId }) => {
   const [notes, setNotes] = useState("");
   const [loading, setLoading] = useState(false);
   const [brandData, setBrandData] = useState({
-
+    brand_name:'',
     character:'',
     external_problem:'',
     internal_problem:'',
@@ -43,7 +43,7 @@ const WebDesignIntake = ({ userId }) => {
     if (brandData.character) {
       console.log("Got brandData:", brandData);
       console.log("Got webdesignintakeData:", webDesignIntakeData);
-      if (brandData.character && webDesignIntakeData.notes){
+      if (webDesignIntakeData.notes && brandData.character ){
         fetchDeploySite(brandData,webDesignIntakeData, userId)
       }
       // Do what you need to do once brandData is ready
